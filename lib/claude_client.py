@@ -11,7 +11,7 @@ def generate_note_article(topic: str) -> dict:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     message = client.messages.create(
-        model="claude-3-haiku-20240307",
+        model="claude-haiku-4-5-20251001",
         max_tokens=8000,
         system=NOTE_SYSTEM_PROMPT,
         messages=[
@@ -62,7 +62,7 @@ def generate_twitter_post(topic: str, for_note: bool = False) -> str:
         user_prompt = TWITTER_STANDALONE_PROMPT.format(topic=topic)
 
     message = client.messages.create(
-        model="claude-3-haiku-20240307",
+        model="claude-haiku-4-5-20251001",
         max_tokens=500,
         system=TWITTER_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user_prompt}],
