@@ -1,4 +1,16 @@
 {
+  "builds": [
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.py"
+    }
+  ],
   "crons": [
     {
       "path": "/api/generate_morning",
