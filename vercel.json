@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/generate_morning",
+      "schedule": "30 21 * * *"
+    },
+    {
+      "path": "/api/generate_noon",
+      "schedule": "50 2 * * *"
+    },
+    {
+      "path": "/api/generate_evening",
+      "schedule": "0 10 * * *"
+    }
+  ]
+}
